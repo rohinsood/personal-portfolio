@@ -1,52 +1,50 @@
 <!-- Extending the predefined project layout -->
 {% extends "layouts/base.html" %}
 
-<!- This variable sets name of browser tab  -->
-{% set project = "TODO" %}
+<!- This variable sets name of browser tab -->
+  {% set project = "TODO" %}
 
-<div class="px-5 py-5 mx-auto" style="height: 100vh;">
+  <div class="px-5 py-5 mx-auto" style="height: 100vh;">
     <h1 class="text-primary" style="color: white"><strong>ROHIN SOOD</strong></h1>
     <form id="todo-form">
-        <input type="text" placeholder="task name" id="todo-name">
-        <input type="submit" value="submit">
-      </form>
-      
-      <ul id="todo-list"></ul>
+      <input type="text" placeholder="task name" id="todo-name">
+      <input type="submit" value="submit">
+    </form>
 
-</div>
+    <ul id="todo-list"></ul>
 
-<script>
-      
+  </div>
+
+  <script>
+
     document.getElementById("todo-form").onsubmit = function (event) {
       event.preventDefault();
-  
+
       const name = document.getElementById("todo-name").value;
-  
+
       document.getElementById("todo-name").value = "";
-  
+
       const todoItem = document.createElement("li");
       const todoText = document.createTextNode(name);
-  
+
       todoItem.appendChild(todoText);
       todoItem.classList.add("todo-item");
-  
+
       todoItem.onclick = function () {
         document.getElementById("todo-list").removeChild(todoItem);
       }
-  
+
       document.getElementById("todo-list").appendChild(todoItem);
     }
-  
-  </script>
-  
-  <style>
 
+  </script>
+
+  <style>
     .todo-item:hover {
       text-decoration: line-through;
     }
 
     li {
-        color: white;
+      color: white;
     }
-  
   </style>
