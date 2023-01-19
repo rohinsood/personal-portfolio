@@ -2,12 +2,24 @@
 This HTML is setup as a fragment allowing it to be "included" by other HTML files via Jinja2
 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <img src="https://avatars.githubusercontent.com/u/69406769?s=48&v=4" width="50" height="50" class="d-inline-block align-center" alt="">
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
-            <a class="nav-link" href={{ url_for('index') }}>Home</a>
-            <a class="nav-link" href={{ url_for('todo') }}>TODO</a>
-        </div>
-    </div>
+  <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="#">
+      <img src="../../static/assets/logo.ico" width="30" height="30" alt="">
+    </a>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+    </ul>
+  </div>
 </nav>
